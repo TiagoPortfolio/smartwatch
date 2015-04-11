@@ -1,0 +1,139 @@
+*{
+	-webkit-user-select: none;
+}
+
+#visor {
+  height: 0.92in;
+  width: 1.2in;
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.43in;
+  margin-left: -0.61in;
+}
+
+#blocked {
+	cursor: pointer;
+  height: 0.8in;
+}
+
+#find-people-icon {
+  height: 0.79cm;
+  border: 0.06cm solid black;
+  border-radius: 0.26cm;
+  margin: 0.26cm;
+  padding: 0.05cm;
+  cursor: pointer;
+} 
+
+#back-button {
+  height: 0.1in;
+  width: 0.2in;
+  position: fixed;
+  top: 50%;
+  cursor: pointer;
+  left: 50%;
+  opacity: 0.5;
+  margin-top: 0.62in;
+  margin-left: -0.5in;
+}
+
+#back-button:active {
+  opacity: 1;
+}
+
+#home-button {
+  height: 0.3in;
+  width: 0.3in;
+  position: fixed;
+  border-radius: 20px;
+  top: 50%;
+  cursor: pointer;
+  opacity: 0;
+  background: rgb(211, 175, 151);
+  left: 50%;
+  margin-top: 0.59in;
+  margin-left: -0.18in;
+}
+
+#home-button:active {
+  opacity: 0.3;
+}
+
+#help-button {
+  height: 0.1in;
+  width: 0.2in;
+  position: fixed;
+  top: 50%;
+  cursor: pointer;
+  left: 50%;
+  opacity: 0.5;
+  margin-top: 0.62in;
+  margin-left: 0.22in;
+}
+
+#help-button:active {
+  opacity: 1;
+}
+
+#findPeople, #help{
+	height: inherit;
+  overflow: hidden;
+  display: block;
+}
+
+.friends, .helpMenu{
+	height: inherit;
+	text-align: center;
+}
+
+.friends div, .helpMenu div{
+	padding: 0.02cm 0cm;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.friends div img, .helpMenu div img{
+	height: 0.58cm;
+	border-radius: 0.52cm;
+	float: left;
+	margin-top: 0.09cm;
+}
+
+.friends div span, .helpMenu div span{
+	margin-top: 0.18cm;
+	float: left;
+	font-family: 'Open Sans', sans-serif;
+	margin-left: 0.26cm;
+	font-size: 0.39cm;
+	font-weight: bold;
+}
+
+.friends hr, .helpMenu hr{
+	width: 90%;
+	margin-top: 0cm;
+	margin-bottom: 0cm;
+	border: 0;
+	height: 0.05cm;
+	background-image: -webkit-linear-gradient(left, rgba(83, 67, 58, 0), rgba(255, 133, 0, 1), rgba(90, 73, 59, 0));
+}
+
+#hologramScreen{
+  height: inherit;
+  width: 1.2in;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+#hologramScreen div{
+  height: inherit;
+  width: 1.2in;
+}
+
+#hologramScreen img{
+  margin: 0.1em auto;
+  width: inherit;
+  height: 55%;
+}
