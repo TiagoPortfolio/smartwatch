@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Grupo IPM</title>
+
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.kinetic.min.js"></script>
+	<script type="text/javascript" src="js/projecto.js"></script>
+	<script type="text/javascript" src="js/scroll.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/loader.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/hologram.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body background="images/background.jpg", style="background-attachment:fixed; background-position:center center; background-repeat:no-repeat;">
+
+	<div id="visor">
+
+		<div id="blocked">
+			<h2 class="text-pulse">iRAVE</h2>
+			<div class="loading-container">
+				<div class="loader">
+					<div class="loading-bars">
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="initial" style="display:none;">
+			<img id="find-people-icon" src="images/friends.svg"></img>
+			<img id="band-schedule-icon" src="images/music191.svg"></img>
+			<img id="fast-food-icon" src="images/snacks.svg"></img>
+		</div>
+
+		<div id="help" style="display:none;">
+			<div class="helpMenu initial" style="display:none;">
+				<div>
+					<img src="images/friends.svg"></img>
+					<span>Find Someone - Encontra amigos e staff</span>
+				</div>
+				<hr>
+				<div>
+					<img src="images/snacks.svg"></img>
+					<span>Fast Food - Compra comida e bebida</span>
+				</div>
+				<hr>
+				<div>
+					<img src="images/music191.svg"></img>
+					<span>Band Schedule - Vê o horário das atuações</span>
+				</div>
+			</div> 
+			<div class="helpMenu findPeople" style="display:none;">
+				<div>
+					<span>TODO</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="findPeople" style="display:none;">
+			<div class="friends">
+				<div id="staff">
+					<img src="images/staff.svg" style="background: white;"></img>
+					<span>STAFF</span>
+				</div>
+				<hr>
+				<div id="cesar">
+					<img src="images/cesar.png"></img>
+					<span>César</span>
+				</div>
+				<hr>
+				<div id="magda">
+					<img src="images/magda.png"></img>
+					<span>Magda</span>
+				</div>
+				<hr>
+				<div id="tiago">
+					<img src="images/tiago.png"></img>
+					<span>Tiago</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="back-button">
+			<img src="images/back-button.svg" style="height: 0.2in;"></img>
+		</div>
+		<div id="home-button"></div>
+		<div id="help-button">
+			<img src="images/help.svg" style="height: 0.2in;"></img>
+		</div>
+
+		<div id="step" style="display:none;">
+
+			<div id="stepFindPeople"></div>
+
+		</div>
+
+		<div id="chegou" style="display:none;">
+			<span>Chegou ao seu destino!</span>
+			<img src="images/smile.png"></img>
+		</div>
+
+		<div id="hologram" style="display:none;">
+			<img id="findStaff" src="images/path_staff.png" style="display:none;"></img>
+			<img id="findCesar" src="images/path_cesar.png" style="display:none;"></img>
+			<img id="findMagda" src="images/path_magda.png" style="display:none;"></img>
+			<img id="findTiago" src="images/path_tiago.png" style="display:none;"></img>
+		</div>
+
+		<div id="hologramScreen" style="display:none;">
+			<div id="findStaffScreen" style="display:none;">
+				<span style="font-size: 0.9em;">Finding STAFF</span>
+				<img src="images/staff.svg" style="margin: 0.1em auto; width: inherit; height: 55%;"></img>
+				<span id="distance" style="font-size: 1em;">140m</span>
+			</div>
+			<div id="findCesarScreen" style="display:none;">
+				<span>Finding Cesar</span>
+				<img src="images/cesar.png" style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<span id="distance">140m</span>
+			</div>
+			<div id="findMagdaScreen" style="display:none;">
+				<span>Finding Magda</span>
+				<img src="images/magda.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<span id="distance">140m</span>
+			</div>
+			<div id="findTiagoScreen" style="display:none;">
+				<span>Finding Tiago</span>
+				<img src="images/tiago.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<span id="distance">140m</span>
+			</div>
+		</div>
+
+	</div>
+
+		<div class="simulation-buttons" style="display:none;">
+			Simulation Buttons 
+			<div class="ist-logo"></div>
+			<input id="find-button" type="button" value="Reach Friend"></input>
+		</div>
+
+</body>
+</html>
