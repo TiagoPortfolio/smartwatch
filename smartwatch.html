@@ -3,19 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Grupo IPM</title>
+	<title>Smartwatch iRave</title>
 
-	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.kinetic.min.js"></script>
-	<script type="text/javascript" src="js/projecto.js"></script>
-	<script type="text/javascript" src="js/scroll.js"></script>
+	<script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/jquery.kinetic.min.js"></script>
+	<!-- <script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/projecto.js"></script> -->
+	<script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/projecto.min.js"></script>
+	<!-- <script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/scroll.js"></script> -->
+	<script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/scroll.min.js"></script>
+	<script type="text/javascript" src="projects/smartwatch/smartwatch_assets/js/hologram.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/loader.css">
-	<link rel="stylesheet" type="text/css" href="css/menu.css">
-	<link rel="stylesheet" type="text/css" href="css/hologram.css">
+	<!-- <link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/loader.css"> -->
+	<link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/loader.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/menu.css"> -->
+	<link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/menu.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/hologram.css"> -->
+	<link rel="stylesheet" type="text/css" href="projects/smartwatch/smartwatch_assets/css/hologram.min.css">
 </head>
 
-<body background="images/background.jpg", style="background-attachment:fixed; background-position:center center; background-repeat:no-repeat;">
+<body background="projects/smartwatch/smartwatch_assets/images/background.jpg", style="background-attachment:fixed; background-position:center center; background-repeat:no-repeat;">
+
+	<div id="txt"></div>
 
 	<div id="visor">
 
@@ -36,106 +44,590 @@
 		</div>
 
 		<div id="initial" style="display:none;">
-			<img id="find-people-icon" src="images/friends.svg"></img>
-			<img id="band-schedule-icon" src="images/music191.svg"></img>
-			<img id="fast-food-icon" src="images/snacks.svg"></img>
+			<img id="find-people-icon" src="projects/smartwatch/smartwatch_assets/images/friends.svg"></img>
+			<img id="band-schedule-icon" src="projects/smartwatch/smartwatch_assets/images/music191.svg"></img>
+			<img id="fast-food-icon" src="projects/smartwatch/smartwatch_assets/images/snacks.svg"></img>
+		</div>
+
+		<div id="blockmessage" style="display:none; font-family:sans-serif;">
+			<b>Press Home button to unlock</b>
 		</div>
 
 		<div id="help" style="display:none;">
-			<div class="helpMenu initial" style="display:none;">
+			<div class="helpMenu initial" id="helpmenuinitial" style="display:none;">
 				<div>
-					<img src="images/friends.svg"></img>
-					<span>Find Someone - Encontra amigos e staff</span>
+					<img src="projects/smartwatch/smartwatch_assets/images/friends.svg"></img>
+					<span>Find Someone - Find Friends & Staff</span>
 				</div>
 				<hr>
 				<div>
-					<img src="images/snacks.svg"></img>
-					<span>Fast Food - Compra comida e bebida</span>
+					<img src="projects/smartwatch/smartwatch_assets/images/snacks.svg"></img>
+					<span>Fast Food - Order food and drinks</span>
 				</div>
 				<hr>
 				<div>
-					<img src="images/music191.svg"></img>
-					<span>Band Schedule - Vê o horário das atuações</span>
+					<img src="projects/smartwatch/smartwatch_assets/images/music191.svg"></img>
+					<span>Band Schedule - Check where and when your favorite band is going to act!</span>
+				</div>
+				<hr>
+				<div>
+					<span style="margin-top: 0.18cm;">Press Home button for 3 seconds to lock</span>
 				</div>
 			</div> 
 			<div class="helpMenu findPeople" style="display:none;">
 				<div>
-					<span>TODO</span>
+					<span>Slide vertically and chose your friend/staff</span>
+				</div>
+			</div>
+			<div class="helpMenu findStaff" style="display:none;">
+				<div>
+					<span>Follow hologram indications</span>
+				</div>
+			</div>
+			<div class="helpMenu findCesar" style="display:none;">
+				<div>
+					<span>Follow hologram indications</span>
+				</div>
+			</div>
+			<div class="helpMenu findMagda" style="display:none;">
+				<div>
+					<span>Follow hologram indications</span>
+				</div>
+			</div>
+			<div class="helpMenu findTiago" style="display:none;">
+				<div>
+					<span>Follow hologram indications</span>
+				</div>
+			</div>
+			<div class="helpMenu bandSchedule" id="helpmenuband" style="display:none;">
+				<div>
+					<span>Bands - Check gigs by bands</span>
+				</div>
+				<hr>
+				<div>
+					<span>Schedule -  Check gigs by stage, hour and day</span>
+				</div>
+			</div>
+			<div class="helpMenu bandasMenu" style="display:none;">
+				<div>
+					<span>Slide vertically and chose a band</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda1" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda2" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda3" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda4" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda5" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda6" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findbanda7" style="display:none;">
+				<div>
+					<span>Click on the arrows to find more bands</span>
+				</div>
+			</div>
+			<div class="helpMenu findhorario11" id="helpmenuhorario" style="display:none;">
+				<div>
+					<span>Arrows up/down to change the day and arrows left/right para to change the hour</span>
+				</div>
+			</div>
+			<div class="helpMenu findhorario12" id="helpmenuhorario" style="display:none;">
+				<div>
+					<span>Arrows up/down to change the day and arrows left/right para to change the hour</span>
+				</div>
+			</div>
+			<div class="helpMenu findhorario21" id="helpmenuhorario" style="display:none;">
+				<div>
+					<span>Arrows up/down to change the day and arrows left/right para to change the hour</span>
+				</div>
+			</div>
+			<div class="helpMenu findhorario22" id="helpmenuhorario" style="display:none;">
+				<div>
+					<span>Arrows up/down to change the day and arrows left/right para to change the hour</span>
+				</div>
+			</div>
+			<div class="helpMenu fastFood" style="display:none;">
+				<div>
+					<span>Chose the restaurant where you want to order</span>
+				</div>
+			</div>
+			<div class="helpMenu foodDrink" style="display:none;">
+				<div>
+					<span>Chose between food and drink</span>
+				</div>
+			</div>
+			<div class="helpMenu restaurantMenu" id="helpmenumenu" style="display:none;">
+				<div>
+					<span>Chose quantities using +/- arrows.  <br> Chose products using up/down arrows. <br> The shopcart icon allows you to pay our see your current orders.</span>
+				</div>
+			</div>
+			<div class="helpMenu totalOrder" id="helptotal" style="display:none;">
+				<div>
+					<span>Here you can see the total order value.  <br> In details you can see a detailed list of your order. <br> If you wish to pay, well... press Pay!</span>
+				</div>
+			</div>
+			<div class="helpMenu detailsBoxA" id="helpdetails" style="display:none;">
+				<div>
+					<span>Here you can see a detailed list of your order. <br> The cross removes 1 unity from the product and the check icon confirms your changes.</span>
+				</div>
+			</div>
+			<div class="helpMenu detailsBoxB" id="helpdetails" style="display:none;">
+				<div>
+					<span>Here you can see a detailed list of your order. <br> The cross removes 1 unity from the product and the check icon confirms your changes.</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="bandSchedule" style="display:none;">
+			<div class="bandScheduleMenu">
+				<div id="banda">
+					<span>Bands</span>
+				</div>
+				<hr>
+				<div id="horario">
+					<span>Schedule</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="bandasMenu" style="display:none;">
+			<div class="bandas" id="banda">
+				<div id="banda1">
+					<span>Arctic Monkeys</span>
+				</div>
+				<hr>
+				<div id="banda2">
+					<span>Foo Fighters</span>
+				</div>
+				<hr>
+				<div id="banda3">
+					<span>Biffy Clyro</span>
+				</div>
+				<hr>
+				<div id="banda4">
+					<span>The War on Drugs</span>
+				</div>
+				<hr>
+				<div id="banda5">
+					<span>QOTSA</span>
+				</div>
+				<hr>
+				<div id="banda6">
+					<span>Muse</span>
+				</div>
+				<hr>
+				<div id="banda7">
+					<span>Foals</span>
 				</div>
 			</div>
 		</div>
 
 		<div id="findPeople" style="display:none;">
-			<div class="friends">
+			<div class="friends" id="friend">
 				<div id="staff">
-					<img src="images/staff.svg" style="background: white;"></img>
+					<img src="projects/smartwatch/smartwatch_assets/images/staff.svg" style="background: white;"></img>
 					<span>STAFF</span>
 				</div>
 				<hr>
 				<div id="cesar">
-					<img src="images/cesar.png"></img>
+					<img src="projects/smartwatch/smartwatch_assets/images/cesar.png"></img>
 					<span>César</span>
 				</div>
 				<hr>
 				<div id="magda">
-					<img src="images/magda.png"></img>
+					<img src="projects/smartwatch/smartwatch_assets/images/magda.png"></img>
 					<span>Magda</span>
 				</div>
 				<hr>
 				<div id="tiago">
-					<img src="images/tiago.png"></img>
+					<img src="projects/smartwatch/smartwatch_assets/images/tiago.png"></img>
 					<span>Tiago</span>
 				</div>
 			</div>
 		</div>
 
+		<div id="fastFood" style="display:none">
+			<div id="restaurants">
+				<div id="restA">
+					<span>Restaurant A</span>
+				</div>
+				<hr>
+				<div id="restB">
+					<span>Restaurant B</span>
+				</div>
+			</div>
+			<div id="foodDrink" style="display:none">
+				<div id="food">	
+					<img src="projects/smartwatch/smartwatch_assets/images/food.svg"></img>
+					<span style="margin-left: 0.2cm;">Food</span>
+				</div>
+				<hr>
+				<div id="drink">
+					<img src="projects/smartwatch/smartwatch_assets/images/drink.svg"></img>
+					<span style="margin-left: 0.2cm;">Drink</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="restaurantA" style="display:none">
+			<div id="restAFood" style="display:none">
+				<div class="quantity">
+					<img id="qttUp" src="projects/smartwatch/smartwatch_assets/images/seta-cima1.png" style="display:block;"></img>
+					<span>0</span>
+					<img id="qttDown" src="projects/smartwatch/smartwatch_assets/images/seta-baixo1.png"></img>
+				</div>
+				<div class="description">
+					<div style="padding-top: 0.7cm; display: inline-block; position: absolute; z-index: -1;">
+						<span>Pizza</span>
+						<span id="price" style="display: block;">3.00€</span>
+					</div>
+					<div style="margin-top:0.9cm;">
+						<img class="shopcart" src="projects/smartwatch/smartwatch_assets/images/shopcart.svg"></img>
+						<img class="switch" style="  margin-top: 0.8cm; margin-left: 0.7cm;" src="projects/smartwatch/smartwatch_assets/images/drink.svg"></img>
+					</div>
+						<img class="swap1" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png"></img>
+						<img class="swap" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png"></img>
+				</div>
+			</div>
+			<div id="restADrink" style="display:none">
+				<div class="quantity">
+					<img id="qttUp" src="projects/smartwatch/smartwatch_assets/images/seta-cima1.png" style="display:block;"></img>
+					<span>0</span>
+					<img id="qttDown" src="projects/smartwatch/smartwatch_assets/images/seta-baixo1.png"></img>
+				</div>
+				<div class="description">
+					<div style="padding-top: 0.7cm; display: inline-block; position: absolute; z-index: -1;">
+						<span>Coca-cola</span>
+						<span id="price" style="display: block;">1.50€</span>
+					</div>
+					<div style="margin-top:0.9cm;">
+						<img class="shopcart" src="projects/smartwatch/smartwatch_assets/images/shopcart.svg"></img>
+						<img class="switch" style="  margin-top: 0.8cm; margin-left: 0.7cm;" src="projects/smartwatch/smartwatch_assets/images/food.svg"></img>
+					</div>
+						<img class="swap1" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png"></img>
+						<img class="swap" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png"></img>
+				</div>
+			</div>
+		</div>
+
+		<div id="restaurantB" style="display:none">
+			<div id="restBFood" style="display:none">
+				<div class="quantity">
+					<img id="qttUp" src="projects/smartwatch/smartwatch_assets/images/seta-cima1.png" style="display:block;"></img>
+					<span>0</span>
+					<img id="qttDown" src="projects/smartwatch/smartwatch_assets/images/seta-baixo1.png"></img>
+				</div>
+				<div class="description">
+					<div style="padding-top: 0.7cm; display: inline-block; position: absolute; z-index: -1;">
+						<span style="margin-left: -0.3cm;">Hot dog</span>
+						<span id="price" style="display: block;">2.50€</span>
+					</div>
+					<div style="margin-top:0.9cm;">
+						<img class="shopcart" src="projects/smartwatch/smartwatch_assets/images/shopcart.svg"></img>
+						<img class="switch" style="  margin-top: 0.8cm; margin-left: 0.7cm;" src="projects/smartwatch/smartwatch_assets/images/drink.svg"></img>
+					</div>
+						<img class="swap1" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png"></img>
+						<img class="swap" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png"></img>
+				</div>
+			</div>
+			<div id="restBDrink" style="display:none">
+				<div class="quantity">
+					<img id="qttUp" src="projects/smartwatch/smartwatch_assets/images/seta-cima1.png" style="display:block;"></img>
+					<span>0</span>
+					<img id="qttDown" src="projects/smartwatch/smartwatch_assets/images/seta-baixo1.png"></img>
+				</div>
+				<div class="description">
+					<div style="padding-top: 0.7cm; display: inline-block; position: absolute; z-index: -1;">
+						<span style="margin-left: -0.1cm;">Beer</span>
+						<span id="price" style="display: block;">1.00€</span>
+					</div>
+					<div style="margin-top:0.9cm;">
+						<img class="shopcart" src="projects/smartwatch/smartwatch_assets/images/shopcart.svg"></img>
+						<img class="switch" style="  margin-top: 0.8cm; margin-left: 0.7cm;" src="projects/smartwatch/smartwatch_assets/images/food.svg"></img>
+					</div>
+						<img class="swap1" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png"></img>
+						<img class="swap" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png"></img>
+				</div>
+			</div>
+		</div>
+
+		<div id="totalOrder" style="display:none;">
+			<span style="display:block; margin-top: 0.03in; font-family: sans-serif;">TOTAL</span>
+			<span style="display:block;">0€</span>
+			<span id="pay">Pay</span>
+			<span id="details">Details</span>
+		</div>
+
+		<div id="detailsBoxA" style="display:none; text-align:center;">
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Pizza</span>
+				<span>Qtt:</span>
+				<span class="quantityFood">0</span>
+				<img id="emptyFood" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Rusk</span>
+				<span>Qtt:</span>
+				<span class="quantityFood">0</span>
+				<img id="emptyFood" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;   margin-left: -0.2cm;">Coca-Cola</span>
+				<span>Qtt:</span>
+				<span class="quantityDrink">0</span>
+				<img id="emptyDrink" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;   margin-left: -0.2cm;">Water</span>
+				<span>Qtt:</span>
+				<span class="quantityDrink">0</span>
+				<img id="emptyDrink" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+			<img id="confirmChanges" style="height: 0.17in; display: block; cursor: pointer; margin: 0 auto;" src="projects/smartwatch/smartwatch_assets/images/confirm.png"></img>
+		</div>
+
+		<div id="detailsBoxB" style="display:none; text-align:center;">
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Hot dog</span>
+				<span>Qtt:</span>
+				<span class="quantityFood">0</span>
+				<img id="emptyFood" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Hamburguer</span>
+				<span>Qtt:</span>
+				<span class="quantityFood">0</span>
+				<img id="emptyFood" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Beer</span>
+				<span>Qtt:</span>
+				<span class="quantityDrink">0</span>
+				<img id="emptyDrink" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+
+			<div class="enabled">
+				<span style="display:block; font-weight: bold;">Ice Tea</span>
+				<span>Qtt:</span>
+				<span class="quantityDrink">0</span>
+				<img id="emptyDrink" style="float: right; height: 0.17in; margin: 0cm 0.3cm; cursor: pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			</div>
+			<img id="confirmChanges" style="height: 0.17in; display: block; cursor: pointer; margin: 0 auto;" src="projects/smartwatch/smartwatch_assets/images/confirm.png"></img>
+		</div>
+
+		<div id="confirm-box" style="display:none; text-align: center;font-family: sans-serif; font-size:0.4cm;">
+			<span style="clear:both; display:block;">Are you sure you want to cancel?</span>
+			<img id="retry-order" style="float:left; margin: 0.07in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			<img id="cancel-order" style="float:right; margin: 0.07in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/confirm.png"></img>
+		</div>
+
+		<div id="payBox" style="display:none; text-align: center;font-family: sans-serif;">
+			<span style="clear:both; display:block; padding: 0.03in;">Are you sure you want to pay?</span>
+			<img id="cancel-pay" style="float:left; margin: 0in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			<img id="confirm-pay" style="float:right; margin: 0in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/confirm.png"></img>
+		</div>
+
+		<div id="denyBox" style="display:none; text-align: center;font-family: sans-serif;">
+			<span style="clear:both; display:block; padding: 0.03in;">You did not order any products!</span>
+			<img id="cancel-pay" style="margin: 0in 0.1in; cursor:pointer; height: 0.7cm;" src="projects/smartwatch/smartwatch_assets/images/warning.svg"></img>
+		</div>
+
+		<div id="orderReady" style="display:none; text-align: center;font-family: sans-serif; font-size: 0.4cm;">
+			<span style="clear:both; display:block; padding: 0.03in; font-size: 13.5px;">You will be notified when your order is ready.</span>
+			<span style="clear:both; display:block; padding: 0.03in; font-weight:bold;">Restaurante A</span>
+		</div>
+
+		<div id="notification" style="display:none; text-align: center;font-family: sans-serif; font-size: 0.4cm;">
+			<span style="clear:both; display:block; padding: 0.1in;">Your order is ready!</span>
+			<span style="clear:both; display:block; padding: 0.03in; font-weight:bold;">Restaurante A</span>
+		</div>
+
 		<div id="back-button">
-			<img src="images/back-button.svg" style="height: 0.2in;"></img>
+			<img src="projects/smartwatch/smartwatch_assets/images/back-button.svg" style="height: 0.2in;"></img>
 		</div>
 		<div id="home-button"></div>
 		<div id="help-button">
-			<img src="images/help.svg" style="height: 0.2in;"></img>
+			<img src="projects/smartwatch/smartwatch_assets/images/help.svg" style="height: 0.2in;"></img>
 		</div>
 
-		<div id="step" style="display:none;">
-
-			<div id="stepFindPeople"></div>
-
+		<div id="confirmFind" style="display:none; text-align: center;font-family: sans-serif; font-size:0.4cm;">
+			<span style="clear:both; display:block;">Are you sure you want to cancel?</span>
+			<img id="retryFind" style="float:left; margin: 0.07in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/cancel.png"></img>
+			<img id="cancelFind" style="float:right; margin: 0.07in 0.1in; cursor:pointer;" src="projects/smartwatch/smartwatch_assets/images/confirm.png"></img>
 		</div>
 
-		<div id="chegou" style="display:none;">
-			<span>Chegou ao seu destino!</span>
-			<img src="images/smile.png"></img>
+		<div id="chegou" style="display:none; font-size:15px;">
+			<span>You have found<br>your friend!</span>
+			<img src="projects/smartwatch/smartwatch_assets/images/staff.svg"></img>
 		</div>
 
 		<div id="hologram" style="display:none;">
-			<img id="findStaff" src="images/path_staff.png" style="display:none;"></img>
-			<img id="findCesar" src="images/path_cesar.png" style="display:none;"></img>
-			<img id="findMagda" src="images/path_magda.png" style="display:none;"></img>
-			<img id="findTiago" src="images/path_tiago.png" style="display:none;"></img>
+			<img id="findStaff" src="projects/smartwatch/smartwatch_assets/images/path_staff.png" style="display:none;"></img>
+			<img id="findCesar" src="projects/smartwatch/smartwatch_assets/images/path_cesar.png" style="display:none;"></img>
+			<img id="findMagda" src="projects/smartwatch/smartwatch_assets/images/path_magda.png" style="display:none;"></img>
+			<img id="findTiago" src="projects/smartwatch/smartwatch_assets/images/path_tiago.png" style="display:none;"></img>
+			<img id="findhorario11" src="projects/smartwatch/smartwatch_assets/images/11.png" style="display:none;"></img>
+			<img id="findhorario12" src="projects/smartwatch/smartwatch_assets/images/12.png" style="display:none;"></img>
+			<img id="findhorario21" src="projects/smartwatch/smartwatch_assets/images/21.png" style="display:none;"></img>
+			<img id="findhorario22" src="projects/smartwatch/smartwatch_assets/images/22.png" style="display:none;"></img>
+			<img id="findbanda1" src="projects/smartwatch/smartwatch_assets/images/1.png" style="display:none;"></img>
+			<img id="findbanda2" src="projects/smartwatch/smartwatch_assets/images/2.png" style="display:none;"></img>
+			<img id="findbanda3" src="projects/smartwatch/smartwatch_assets/images/3.png" style="display:none;"></img>
+			<img id="findbanda4" src="projects/smartwatch/smartwatch_assets/images/4.png" style="display:none;"></img>
+			<img id="findbanda5" src="projects/smartwatch/smartwatch_assets/images/5.png" style="display:none;"></img>
+			<img id="findbanda6" src="projects/smartwatch/smartwatch_assets/images/6.png" style="display:none;"></img>
+			<img id="findbanda7" src="projects/smartwatch/smartwatch_assets/images/7.png" style="display:none;"></img>
 		</div>
 
 		<div id="hologramScreen" style="display:none;">
+			<div class="example-three" style="height:0;">
+				<img class="projection" src="projects/smartwatch/smartwatch_assets/images/projection.png"></img>
+			</div>
 			<div id="findStaffScreen" style="display:none;">
 				<span style="font-size: 0.9em;">Finding STAFF</span>
-				<img src="images/staff.svg" style="margin: 0.1em auto; width: inherit; height: 55%;"></img>
+				<img src="projects/smartwatch/smartwatch_assets/images/staff.svg" style="margin: 0.1em auto; width: inherit; height: 55%;"></img>
 				<span id="distance" style="font-size: 1em;">140m</span>
 			</div>
 			<div id="findCesarScreen" style="display:none;">
 				<span>Finding Cesar</span>
-				<img src="images/cesar.png" style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<img src="projects/smartwatch/smartwatch_assets/images/cesar.png" style="margin: 0.1em auto; display: block; height: 58%;"></img>
 				<span id="distance">140m</span>
 			</div>
 			<div id="findMagdaScreen" style="display:none;">
 				<span>Finding Magda</span>
-				<img src="images/magda.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<img src="projects/smartwatch/smartwatch_assets/images/magda.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
 				<span id="distance">140m</span>
 			</div>
 			<div id="findTiagoScreen" style="display:none;">
 				<span>Finding Tiago</span>
-				<img src="images/tiago.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
+				<img src="projects/smartwatch/smartwatch_assets/images/tiago.png"style="margin: 0.1em auto; display: block; height: 58%;"></img>
 				<span id="distance">140m</span>
 			</div>
+			
+			<div id="findbanda1Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda1" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; opacity:0;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda1" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+
+			<div id="findbanda2Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda2" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda2" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+			<div id="findbanda3Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda3" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda3" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+			<div id="findbanda4Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda4" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda4" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+			<div id="findbanda5Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda5" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda5" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+			<div id="findbanda6Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda6" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda6" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+			</div>
+
+			<div id="findbanda7Screen" style="margin-top: 1.5em; display: none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerdaBanda7" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direitaBanda7" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; opacity:0;">
+				</div>
+			</div>
+
+			<div id="findhorario11Screen" style="margin-top: 1.5em; display:none;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerda11" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; opacity:0">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direita11" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+				<img id="seta-baixo11" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -1.24cm; cursor: pointer;">
+				<img id="seta-cima11" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -2.10cm; opacity:0">
+			</div>
+
+			<div id="findhorario12Screen" style="display:none; margin-top: 1.5em;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerda12" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direita12" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; opacity:0">
+				</div>
+				<img id="seta-baixo12" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -1.24cm; cursor: pointer;">
+				<img id="seta-cima12" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -2.10cm; opacity:0">
+			</div>
+
+			<div id="findhorario21Screen" style="display:none; margin-top: 1.5em;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerda21" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; opacity:0">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direita21" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; cursor: pointer;">
+				</div>
+				<img id="seta-baixo21" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -1.24cm; opacity:0">
+				<img id="seta-cima21" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -2.10cm; cursor: pointer;">
+			</div>
+
+			<div id="findhorario22Screen" style="display:none; margin-top: 1.5em;">
+				<div style="display: inline-flex;">
+					<img id="seta-esquerda22" src="projects/smartwatch/smartwatch_assets/images/seta-esquerda.png" style=" display: inline-flex; height: 25%; float: left; margin-left: 0.1cm; cursor: pointer;">
+					<span style="display: inline-flex; width: 4.6em; height: 0.4in;margin: 0in; font-size:13px; width:5.9em;">Change with arrows</span>
+					<img id="seta-direita22" src="projects/smartwatch/smartwatch_assets/images/seta-direita.png" style="display: inline-flex;  float: right;height:25%; opacity:0">
+				</div>
+				<img id="seta-baixo22" src="projects/smartwatch/smartwatch_assets/images/seta-baixo.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -1.24cm; opacity:0">
+				<img id="seta-cima22" src="projects/smartwatch/smartwatch_assets/images/seta-cima.png" style="display: block; height: 20%; margin-left: 1.2cm;margin-top: -2.10cm; cursor: pointer;">
+			</div>
+
 		</div>
 
 	</div>

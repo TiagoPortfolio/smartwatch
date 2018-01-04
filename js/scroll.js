@@ -1,11 +1,5 @@
 $(document).ready(function() {
-    $('#findPeople').kinetic({
-        cursor : "pointer"
-    });
-});
-
-$(document).ready(function() {
-    $('#help').kinetic({
-        cursor : "pointer"
-    });
+	$('#friend, #helpmenuinitial, #helptotal, #helpmenumenu, #banda, #detailsBoxA, #detailsBoxB').kinetic({
+		cursor : "pointer"
+	});
 });
